@@ -14,10 +14,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup ‘lua’
-        uses: leafo/gh-actions-lua@v9
+      - name: Set up Lua
+        uses: luarocks/gh-actions-lua@master
         with:
-          luaVersion: ${{ matrix.luaVersion }}
+          luaVersion: ${{ matrix.lua_version }}
+
+      - name: Set up LuaRocks
+        uses: luarocks/gh-actions-luarocks@master
 
       - name: Setup ‘luarocks’
         uses: leafo/gh-actions-luarocks@v4
