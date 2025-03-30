@@ -44,7 +44,7 @@ describe("string lambda", function()
 
 	it("memoizes the result of the same string value", function()
 		local fn_a = L("_+2")
-		local fn_b = L("_" .. "+" .. tostring(2 // 1))
+		local fn_b = L("_" .. "+" .. tostring(math.floor(2 / 1)))
 
 		assert.is.equal(fn_a, fn_b)
 	end)
